@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, FlatList, Button } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, View, FlatList, Button, Image, Text } from 'react-native';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 
 export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
   const [modelIsVisible, setModelIsVisible] = useState(false);
+  const [goalCount, setGoalCount] = useState(courseGoals.length);
+
+  useEffect(() => {
+    if (goalCount >= 5) {
+      setModelIsVisible(false);
+    }
+  }, [goalCount]);
 
   function startAddGoalHandler(){
-    setModelIsVisible(true);
+      setModelIsVisible(true);
   }
 
   function endAddGoalHandler(){
@@ -24,16 +31,25 @@ export default function App() {
       },
     ]);
     endAddGoalHandler();
+    setGoalCount(goalCount + 1);
   }
 
   function deleteGoalHandler(id){
     setCourseGoals(currentCourseGoals => {
       return currentCourseGoals.filter((goal) => goal.id !== id);
     });
+    setGoalCount(goalCount - 1);
+  }
+
+  function deleteAllGoalHandler(){
+    setCourseGoals([]); 
+    setGoalCount(0);
   }
 
   return (
     <View style={styles.appContainer}>
+
+      <Image style={styles.image} source={require('./assets/goal.jpg')}/>
 
       <Button title='Add New Goal'
       onPress={startAddGoalHandler}
@@ -43,19 +59,31 @@ export default function App() {
         <GoalInput visible={modelIsVisible} onAddGoal={addGoalHandler} onCancel={endAddGoalHandler} />
       </View>
 
-      <View style={styles.goalsContainer}>
+      {goalCount > 0 && (
         <FlatList
+          style={styles.goalsContainer}
           data={courseGoals}
-          renderItem={(itemData) => {
-            return <GoalItem 
-            text={itemData.item.text}
-            id={itemData.item.id} 
-            onDeleteItem={deleteGoalHandler} />;
-            }}
-          keyExtractor={(item, index) => {
-            return item.id;
+          renderItem={({ item, index }) => {
+            return (
+              <GoalItem
+                text={item.text}
+                id={item.id}
+                onDeleteItem={deleteGoalHandler}
+              />
+            );
           }}
+          keyExtractor={(item, index) => item.id}
         />
+      )}
+
+
+      <View style={styles.goalCountContainer}>
+      <Text style={styles.goalCountText}>
+      Total Goals: {goalCount}
+      </Text>
+      <Button title='Clear All'
+      onPress={deleteAllGoalHandler}
+      color='#BF0000'/>
       </View>
     </View>
   );
@@ -68,6 +96,26 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   goalsContainer: {
-    flex: 5,
+    borderColor: '#CCCCCC',
+    borderWidth:2,
+    borderRadius:6,
+    margin:8,
+    marginTop:20,
+    padding:8,
+  },
+  image:{
+    width:300,
+    height:120,
+    margin:20,
+  },
+  goalCountContainer:{
+    flexDirection:'row',
+    margin:20,
+  },
+  goalCountText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginVertical: 10,
+    marginRight:'40%'
   },
 });
