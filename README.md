@@ -1,79 +1,80 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Set Goal App
 
-# Getting Started
+  <img src='./demo/goaldemo.gif' width='300'  alt='App Screen 1'>
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-## Step 1: Start the Metro Server
+## Description
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Set Goal is a simple mobile application built with React Native that allows you to set and manage your goals.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Features
 
-```bash
-# using npm
-npm start
+- **Add Goals:** Click the "Add Goal" button to add a new goal.
+- **Add Goal Modal:** A modal will slide up from the bottom, allowing you to enter your goal text.
+- **Add and Cancel Buttons:** Inside the modal, you can use the "Add Goal" button to add the goal to the list or the "Cancel" button to discard the goal and close the modal.
+- **List of Goals:** Below the "Add Goal" button, there's a list of goals displayed in a scrollable FlatList.
+- **Individual Goal Deletion:** Onclick to the list item will delete the goal item from the list.
+- **Total Goal Count:** The total count of goals is displayed below the goals list.
+- **Clear All Button:** Next to the total goal count, you can click the "Clear All" button to remove all goals from the list.
 
-# OR using Yarn
-yarn start
-```
+## Getting Started
 
-## Step 2: Start your Application
+### Prerequisites
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- Node.js installed on your computer.
 
-### For Android
+### Installation
 
-```bash
-# using npm
-npm run android
+1. **Clone the repository to your local machine**
+2. **Navigate to the project directory**
+3. **Install dependencies**
+4. **Start the app**
+5. **Follow the instructions in the terminal to run the app on your desired platform (iOS/Android).**
 
-# OR using Yarn
-yarn android
-```
+## Usage
 
-### For iOS
+- **Click the "Add New Goal" button** to open the Add Goal Modal.
 
-```bash
-# using npm
-npm run ios
+- **Inside the modal:**
+- Enter your goal text.
+- Click "Add Goal" to add the goal to the list.
+- Click "Cancel" to discard the goal and close the modal.
 
-# OR using Yarn
-yarn ios
-```
+- **Manage Your Goals:**
+- View your goals in the list.
+- Delete individual goals using the delete button.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+- **Total Goal Count:**
+- The total count of goals is displayed below the goals list.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+- **Clear All Goals:**
+- Click the "Clear All" button to remove all goals from the list.
 
-## Step 3: Modifying your App
+## Screenshots
+#### ***Add Goal screen***
+<img src='./demo/appscreen2.jpg' width='200' >
 
-Now that you have successfully run the app, let's modify it.
+#### ***Goals screen***
+<img src='./demo/appscree1.jpg' width='200' >
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Contributions
 
-## Congratulations! :tada:
+Contributions to the project are welcome! If you'd like to contribute, please follow these steps:
 
-You've successfully run and modified your React Native App. :partying_face:
+1. Fork the repository.
+2. Create a new branch for your feature.
+3. Implement your changes.
+4. Open a pull request detailing your changes.
 
-### Now what?
+## Contact
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+For any inquiries or support, please contact [ishikanimade56@gmail.com](mailto:ishikanimade56@gmail.com).
 
-# Troubleshooting
+Feel free to customize the sections and content as per your specific application requirements and reach out to us with any questions, feedback, or suggestions you may have.
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+---
 
-# Learn More
+Thank you for using the Banking Management System developed in Kotlin! We hope this application makes managing banking operations more convenient. Your feedback is greatly appreciated.
 
-To learn more about React Native, take a look at the following resources:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
