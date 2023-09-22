@@ -73,8 +73,6 @@ For any inquiries or support, please contact [ishikanimade56@gmail.com](mailto:i
 
 Feel free to customize the sections and content as per your specific application requirements and reach out to us with any questions, feedback, or suggestions you may have.
 
----
 
-Thank you for using the Banking Management System developed in Kotlin! We hope this application makes managing banking operations more convenient. Your feedback is greatly appreciated.
 
 
